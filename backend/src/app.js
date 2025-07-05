@@ -14,6 +14,8 @@ const connectDB = require('./config/db'); // 导入数据库连接函数
 // 导入路由模块
 const authRoutes = require('./routes/authRoutes');
 const checkinTypeRoutes = require('./routes/checkinTypeRoutes');
+const challengeRoutes = require('./routes/challengeRoutes'); // <-- 添加这行
+const checkinRecordRoutes = require('./routes/checkinRecordRoutes'); // <-- 添加这行
 // TODO: 在这里导入 CheckinRecord 和 Challenge 路由文件
 
 // **第二步：现在可以安全地连接数据库了，因为 MONGO_URI 已经被加载到 process.env 中**
@@ -29,6 +31,8 @@ app.use(cors()); // 启用 CORS (Cross-Origin Resource Sharing)，允许前端�
 // 路由挂载
 app.use('/api/auth', authRoutes); // 用户认证相关的 API (注册、登录)
 app.use('/api/checkin-types', checkinTypeRoutes); // 打卡内容管理 API
+app.use('/api/challenges', challengeRoutes); // <-- 添加这行
+app.use('/api/checkins', checkinRecordRoutes); // <-- 添加这行
 // TODO: app.use('/api/checkins', checkinRecordRoutes); // 打卡记录 API
 // TODO: app.use('/api/challenges', challengeRoutes); // 挑战目标 API
 

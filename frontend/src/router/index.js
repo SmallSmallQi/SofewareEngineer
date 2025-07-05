@@ -4,7 +4,8 @@ import HomeView from '../views/HomeView.vue';
 import LoginView from '../views/LoginView.vue';
 import RegisterView from '../views/RegisterView.vue';
 import CheckinTypesView from '../views/CheckinTypesView.vue';
-
+import ChallengesView from '../views/ChallengesView.vue'; // <-- 添加这行
+import CheckinHistoryView from '../views/CheckinHistoryView.vue'; // <-- 添加这行
 // 定义路由规则
 const routes = [
   {
@@ -28,6 +29,18 @@ const routes = [
     name: 'CheckinTypes',
     component: CheckinTypesView,
     meta: { requiresAuth: true } // 需要认证才能访问
+  },
+  {
+    path: '/challenges',
+    name: 'Challenges',
+    component: ChallengesView, // <-- 添加这行
+    meta: { requiresAuth: true } // 需要认证才能访问
+  },
+  {
+    path: '/history',
+    name: 'CheckinHistory',
+    component: CheckinHistoryView, // <-- 添加这行
+    meta: { requiresAuth: true }
   },
   // TODO: 后续添加其他路由，如 /challenges, /history 等
 ];

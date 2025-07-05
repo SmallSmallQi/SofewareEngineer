@@ -2,8 +2,9 @@
 import axios from 'axios';
 import router from '../router'; // 导入 router 实例，用于重定向
 
-// 后端 API 地址，请确保与后端 app.js 中监听的端口一致
-const API_URL = 'http://localhost:3000/api';
+// 后端 API 地址，从 Vite 环境变量中读取
+// 注意：Vite 环境变量需要以 VITE_ 开头
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'; // 提供一个默认值以防万一
 
 const axiosInstance = axios.create({
     baseURL: API_URL,
